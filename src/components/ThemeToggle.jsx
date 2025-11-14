@@ -31,7 +31,7 @@ export const ThemeToggle = () => {
   return (
     <button
       onClick={toggleTheme}
-      className="fixed top-4 right-4 z-[9999] p-3 rounded-full"
+      className="hidden sm:block fixed top-4 right-4 z-[9999] p-3 rounded-full"
     >
       {isDarkMode ? (
         <Sun className="h-6 w-6 text-yellow-300" />
