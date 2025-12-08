@@ -1,5 +1,4 @@
 import { Briefcase, Code, User, GraduationCap, Download } from "lucide-react";
-import ResumePDF from "../assets/Gopi_Resume.pdf";
 
 export const AboutSection = () => {
   return (
@@ -29,7 +28,7 @@ export const AboutSection = () => {
                 Get In Touch
               </a>
               <a
-                href={ResumePDF}
+                href="/public/Gopi_Resume.pdf"
                 download="Gopikrishna_Resume.pdf"
                 className="px-6 py-2 flex items-center gap-2 rounded-full border border-primary text-primary hover:bg-primary/10 transition-colors duration-300"
               >
