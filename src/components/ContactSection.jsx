@@ -1,11 +1,4 @@
-import {
-  Instagram,
-  Linkedin,
-  Mail,
-  MapPin,
-  Phone,
-  Send,
-} from "lucide-react";
+import { UserRound , Linkedin, Mail, MapPin, Phone, Send } from "lucide-react";
 import { toast } from "sonner";
 import { useState } from "react";
 
@@ -43,16 +36,16 @@ export const ContactSection = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
           {/* Left Side - Contact Info */}
           <div className="space-y-8">
-            <h3 className="text-2xl font-semibold">Contact Information</h3>
+            <h3 className="text-2xl font-semibold"><span className="text-primary">Contact</span>{" "}Information</h3>
 
             <div className="space-y-6">
               {/* Email */}
-              <div className="flex items-start space-x-4">
+              <div className="flex items-center space-x-4">
                 <div className="p-3 rounded-full bg-primary/10">
                   <Mail className="w-6 h-6 text-primary" />
                 </div>
-                <div>
-                  <h4 className="font-medium">Email</h4>
+                <div className="flex items-center gap-2 flex-wrap">
+                  <h4 className="font-medium">Email:</h4>
                   <a
                     href="mailto:gopikrishnagurivisetti@gmail.com"
                     className="text-muted-foreground hover:text-primary transition-colors"
@@ -63,12 +56,12 @@ export const ContactSection = () => {
               </div>
 
               {/* Phone */}
-              <div className="flex items-start space-x-4">
+              <div className="flex items-center space-x-4">
                 <div className="p-3 rounded-full bg-primary/10">
                   <Phone className="w-6 h-6 text-primary" />
                 </div>
-                <div>
-                  <h4 className="font-medium">Phone</h4>
+                <div className="flex items-center gap-2 flex-wrap">
+                  <h4 className="font-medium">Phone:</h4>
                   <a
                     href="tel:+917288048922"
                     className="text-muted-foreground hover:text-primary transition-colors"
@@ -79,19 +72,19 @@ export const ContactSection = () => {
               </div>
 
               {/* Location */}
-              <div className="flex items-start space-x-4">
+              <div className="flex items-center space-x-4">
                 <div className="p-3 rounded-full bg-primary/10">
                   <MapPin className="w-6 h-6 text-primary" />
                 </div>
-                <div>
-                  <h4 className="font-medium">Location</h4>
+                <div className="flex items-center gap-2 flex-wrap">
+                  <h4 className="font-medium">Location:</h4>
                   <p className="text-muted-foreground">Hyderabad, India</p>
                 </div>
               </div>
             </div>
 
             {/* Social Links */}
-            <div className="pt-6">
+            {/* <div className="pt-6">
               <h4 className="font-medium">Connect with me</h4>
               <div className="flex space-x-5 mt-3">
                 <a
@@ -101,15 +94,24 @@ export const ContactSection = () => {
                 >
                   <Linkedin className="text-primary" />
                 </a>
-                <a
-                  href="#"
+              </div>
+            </div> */}
+            <div className="flex items-center space-x-4">
+                <div className="p-3 rounded-full bg-primary/10">
+                  <UserRound className="w-6 h-6 text-primary" />
+                </div>
+                <div className="flex items-center gap-2 flex-wrap">
+                  <h4 className="font-medium">Connect with me:</h4>
+                  <a
+                  href="https://www.linkedin.com/in/gopikrishna-gurivisetti-software-developer"
                   target="_blank"
+                  aria-label="LinkedIn"
                   className="p-2 rounded-full hover:bg-primary/10 transition"
                 >
-                  <Instagram className="text-primary" />
+                  <Linkedin className="text-primary" />
                 </a>
+                </div>
               </div>
-            </div>
           </div>
 
           {/* Right Side - Form */}
@@ -135,7 +137,7 @@ export const ContactSection = () => {
                 <input
                   type="email"
                   required
-                  placeholder="john@gmail.com"
+                  placeholder="Gopikrishna@gmail.com"
                   className="w-full px-4 py-3 rounded-md border border-input bg-background focus:outline-none focus:ring-2 focus:ring-primary"
                 />
               </div>

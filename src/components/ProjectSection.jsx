@@ -3,30 +3,34 @@ import { ArrowRight, ExternalLink, Github } from "lucide-react";
 const projects = [
   {
     id: 1,
-    title: "Eduford University",
-    description: "A beautiful website using Html, Css",
-    image: "/Projects/project1.png",
-    tags: ["HTML", "CSS"],
-    demoUrl: "#",
-    gitHubUrl: "#",
+    title: "Quick - Chat",
+    description:
+      "Quick Chat is a real-time messaging app with online user status, media sharing, and a clean responsive UI.",
+    image: "/Projects/project5.png",
+    tags: ["HTML", "Tailwind css", "Javascript", "React.js", "Socket.io", "Node.js", "Mongodb"],
+    demoUrl: "https://real-chat-app-six.vercel.app",
+    gitHubUrl: "https://github.com/Gopikrishna-Gurivisetti/Real-Chat-App",
   },
   {
     id: 2,
-    title: "Appybiz.com",
-    description: "A beautiful website using Html, Css and Javascript",
-    image: "/Projects/project2.png",
-    tags: ["HTML", "CSS", "Bootstrap", "Javascript"],
-    demoUrl: "#",
-    gitHubUrl: "#",
+    title: "Portfolio Website",
+    description:
+      "A fully responsive portfolio website built with React, showcasing my skills, projects, and interactive UI elements.",
+    image: "/Projects/project4.png",
+    tags: ["HTML", "CSS", "Javascript", "React"],
+    demoUrl: "https://gopikrishna-portfolio-rust.vercel.app/",
+    gitHubUrl:
+      "https://github.com/Gopikrishna-Gurivisetti/gopikrishna-portfolio",
   },
   {
     id: 3,
-    title: "Stalwart",
-    description: "A beautiful website using Html, Css, Bootstrap",
+    title: "Admin Dashboard",
+    description:
+      "A feature-rich admin dashboard developed using React, including charts, tables, and dynamic data visualization.",
     image: "/Projects/project3.png",
-    tags: ["HTML", "CSS", "Bootstrap"],
-    demoUrl: "#",
-    gitHubUrl: "#",
+    tags: ["HTML", "CSS", "Javascript", "React"],
+    demoUrl: "https://admin-project-delta.vercel.app/",
+    gitHubUrl: "https://github.com/Gopikrishna-Gurivisetti/admin-project",
   },
 ];
 export const ProjectSection = () => {
@@ -93,7 +97,8 @@ export const ProjectSection = () => {
         <div className="text-center mt-12">
           <a
             className="cosmic-button w-fit flex items-center mx-auto gap-2"
-            target="_blank" href="https://github.com/Gopikrishna-Gurivisetti"
+            target="_blank"
+            href="https://github.com/Gopikrishna-Gurivisetti"
           >
             Check My Github
             <ArrowRight size={16} />
