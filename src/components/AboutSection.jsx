@@ -28,7 +28,7 @@ export const AboutSection = () => {
                 Get In Touch
               </a>
               <a
-                href="/public/Gopi_Resume.pdf"
+                href="/Gopi_Resume.pdf"
                 download="Gopikrishna_Resume.pdf"
                 rel="noopener noreferrer"
                 className="px-6 py-2 flex items-center gap-2 rounded-full border border-primary text-primary hover:bg-primary/10 transition-colors duration-300"
