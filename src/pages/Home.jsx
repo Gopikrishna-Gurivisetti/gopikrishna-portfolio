@@ -4,8 +4,10 @@ import { StarBackground } from "../components/StarBackground";
 import { Navbar } from "../components/Navbar";
 import { HeroSection } from "../components/HeroSection";
 import { AboutSection } from "../components/AboutSection";
+import { ExperienceSection } from "../components/ExperienceSection";
 import { SkillsSection } from "../components/SkillsSection";
 import { ProjectSection } from "../components/ProjectSection";
+import { CertificationsSection } from "../components/CertificationsSection";
 import { ContactSection } from "../components/ContactSection";
 import { Footer } from "../components/Footer";
 
@@ -24,8 +26,10 @@ export const Home = () => {
       <main>
         <HeroSection />
         <AboutSection />
+        <ExperienceSection />
         <SkillsSection />
         <ProjectSection />
+        <CertificationsSection />
         <ContactSection />
       </main>
 

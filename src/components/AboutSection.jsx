@@ -1,40 +1,86 @@
-import { Briefcase, Code, User, GraduationCap, Download } from "lucide-react";
+import { Briefcase, Code, User, GraduationCap, Download, Sparkles } from "lucide-react";
 
 export const AboutSection = () => {
-  return (
-    <section id="about" className="py-24 px-4 relative">
-      <div className="container mx-auto max-w-5xl">
-        <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center">
-          About<span className="text-primary"> Me</span>
-        </h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-          {/* LEFT SIDE TEXT */}
-          <div className="space-y-6">
-            <h3 className="text-2xl font-semibold">Passionate web developer</h3>
-            <p className="text-muted-foreground">
-              With over 3 years of experience in web development, I specialize
-              in creating responsive, accessible, and performant web
-              applications using modern technologies.
-            </p>
-            <p className="text-muted-foreground">
-              I am passionate about creating elegant solutions to complex
-              problems, and I am constantly learning new technologies and
-              techniques to stay at the forefront of the ever-evolving web
-              landscape.
-            </p>
+  const skills = [
+    {
+      icon: Code,
+      title: "Web Development",
+      description: "Creating responsive websites and web applications with modern frameworks.",
+      color: "from-blue-500 to-cyan-500"
+    },
+    {
+      icon: User,
+      title: "UI/UX Design",
+      description: "Designing intuitive user interfaces and seamless experiences.",
+      color: "from-purple-500 to-pink-500"
+    },
+    {
+      icon: Briefcase,
+      title: "Project Management",
+      description: "Leading projects from conception to completion using Agile methodologies.",
+      color: "from-orange-500 to-red-500"
+    },
+    {
+      icon: GraduationCap,
+      title: "Education",
+      description: "B.Tech in Mechanical Engineering, KKR & KSR Institute of Technology and Sciences, Guntur (2017-2020) | 73%",
+      color: "from-emerald-500 to-teal-500"
+    }
+  ];
 
-            <div className="flex flex-col sm:flex-row gap-4 pt-4 justify-center items-center">
-              <a
-                href="#contact"
-                className="cosmic-button sm:w-auto text-center"
-              >
+  return (
+    <section id="about" className="section-spacing bg-gradient-to-b from-transparent via-primary/5 to-transparent relative">
+      <div className="container mx-auto max-w-5xl">
+        <div className="space-y-4 text-center mb-12 animation-fade-in">
+          <div className="inline-block badge-primary mb-4">
+            <Sparkles className="inline mr-2" size={16} />
+            About Me
+          </div>
+          <h2 className="text-4xl md:text-5xl font-bold">
+            Passionate <span className="text-transparent bg-gradient-to-r from-purple-500 to-pink-500 bg-clip-text">Web Developer</span>
+          </h2>
+          <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
+            Building elegant solutions to complex problems
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
+          {/* LEFT SIDE TEXT */}
+          <div className="space-y-6 animation-slide-in">
+            <div className="space-y-4">
+              <p className="text-lg text-foreground leading-relaxed">
+                <span className="font-semibold text-primary">Frontend Engineer</span> with 3+ years of experience delivering scalable, high-performance web applications using React.js, Vue.js, Next.js, and TypeScript.
+              </p>
+              <p className="text-lg text-foreground leading-relaxed">
+                Experienced in AI-assisted development workflows using Claude AI and GitHub Copilot, and in building automated business workflows with n8n. Skilled in state management, component reusability, and performance optimization — consistently improving speed and maintainability by up to 40%.
+              </p>
+              <p className="text-lg text-muted-foreground leading-relaxed">
+                Adept at Agile environments, REST API integration, and delivering clean, production-ready code that scales.
+              </p>
+            </div>
+
+            {/* Quick Stats */}
+            <div className="grid grid-cols-2 gap-4 py-4">
+              <div className="p-4 rounded-lg bg-primary/5 border border-primary/10">
+                <div className="text-2xl font-bold text-primary">3+</div>
+                <div className="text-sm text-muted-foreground">Years Experience</div>
+              </div>
+              <div className="p-4 rounded-lg bg-primary/5 border border-primary/10">
+                <div className="text-2xl font-bold text-primary">40%</div>
+                <div className="text-sm text-muted-foreground">Performance Gain</div>
+              </div>
+            </div>
+
+            {/* CTA Buttons */}
+            <div className="flex flex-col sm:flex-row gap-4 pt-4">
+              <a href="#contact" className="cosmic-button text-center">
                 Get In Touch
               </a>
               <a
                 href="/Gopi_Resume.pdf"
                 download="Gopikrishna_Resume.pdf"
                 rel="noopener noreferrer"
-                className="px-6 py-2 flex items-center justify-center gap-2 rounded-full border border-primary text-primary hover:bg-primary/10 transition-colors duration-300 sm:w-auto"
+                className="btn-secondary text-center flex items-center justify-center gap-2"
               >
                 <Download className="h-4 w-4" />
                 Download CV
@@ -43,70 +89,29 @@ export const AboutSection = () => {
           </div>
 
           {/* RIGHT SIDE CARDS */}
-          <div className="grid grid-cols-1 gap-6">
-            {/* Web Development */}
-            <div className="gradient-border p-6 card-hover">
-              <div className="flex items-start gap-4">
-                <div className="p-3 rounded-full bg-primary/10">
-                  <Code className="h-6 w-6 text-primary" />
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+            {skills.map((skill, index) => {
+              const IconComponent = skill.icon;
+              return (
+                <div
+                  key={index}
+                  className="group card-elevated p-6 border border-border hover:border-primary/50 animation-scale-in"
+                  style={{ animationDelay: `${index * 0.1}s` }}
+                >
+                  <div className="flex flex-col gap-4 h-full">
+                    <div className={`p-3 rounded-lg w-fit bg-gradient-to-br ${skill.color} text-white group-hover:scale-110 transition-transform duration-300`}>
+                      <IconComponent className="h-6 w-6" />
+                    </div>
+                    <div>
+                      <h4 className="font-semibold text-lg group-hover:text-primary transition-colors">{skill.title}</h4>
+                      <p className="text-sm text-muted-foreground">
+                        {skill.description}
+                      </p>
+                    </div>
+                  </div>
                 </div>
-                <div className="text-left">
-                  <h4 className="font-semibold text-lg">Web Development</h4>
-                  <p className="text-muted-foreground">
-                    Creating responsive websites and web applications with
-                    modern frameworks.
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            {/* UI Design */}
-            <div className="gradient-border p-6 card-hover">
-              <div className="flex items-start gap-4">
-                <div className="p-3 rounded-full bg-primary/10">
-                  <User className="h-6 w-6 text-primary" />
-                </div>
-                <div className="text-left">
-                  <h4 className="font-semibold text-lg">UI Design</h4>
-                  <p className="text-muted-foreground">
-                    Designing intuitive user interfaces and seamless
-                    experiences.
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            {/* Project Management */}
-            <div className="gradient-border p-6 card-hover">
-              <div className="flex items-start gap-4">
-                <div className="p-3 rounded-full bg-primary/10">
-                  <Briefcase className="h-6 w-6 text-primary" />
-                </div>
-                <div className="text-left">
-                  <h4 className="font-semibold text-lg">Project Management</h4>
-                  <p className="text-muted-foreground">
-                    Leading projects from conception to completion using Agile.
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            {/* 🎓 Education - NEW */}
-            <div className="gradient-border p-6 card-hover">
-              <div className="flex items-start gap-4">
-                <div className="p-3 rounded-full bg-primary/10">
-                  <GraduationCap className="h-6 w-6 text-primary" />
-                </div>
-                <div className="text-left">
-                  <h4 className="font-semibold text-lg">Education</h4>
-                  <p className="text-muted-foreground">
-                    B.Tech in Mechanical Engineering — 2020
-                    <br />
-                    (JNTU Kakinada)
-                  </p>
-                </div>
-              </div>
-            </div>
+              );
+            })}
           </div>
         </div>
       </div>

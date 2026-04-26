@@ -17,6 +17,7 @@ export const Navbar = () => {
   const navItems = [
     { label: "Home", href: "#hero" },
     { label: "About", href: "#about" },
+    { label: "Experience", href: "#experience" },
     { label: "Skills", href: "#skills" },
     { label: "Projects", href: "#projects" },
     { label: "Contact", href: "#contact" },
@@ -27,15 +28,17 @@ export const Navbar = () => {
       <nav
         className={cn(
           "fixed w-full z-50 transition-all duration-300",
-          isScrolled ? "py-3 bg-background/80 backdrop-blur-md shadow-xs" : "py-5"
+          isScrolled 
+            ? "py-3 bg-background/80 backdrop-blur-xl shadow-lg border-b border-border/50" 
+            : "py-5 bg-transparent"
         )}
       >
         <div className="container mx-auto flex items-center justify-between px-4">
           {/* Logo */}
-          <a className="text-xl lg:text-2xl font-bold flex items-center text-foreground">
+          <a href="#hero" className="text-lg lg:text-xl font-bold flex items-center text-foreground transition-all duration-300 hover:scale-105">
             <span className="relative z-10">
-              Gopikrishna{" "}
-              <span className="text-glow text-gradient">Portfolio</span>
+              Gopi<span className="text-primary">K</span>
+              <span className="text-gradient">.</span>
             </span>
           </a>
 
@@ -45,9 +48,10 @@ export const Navbar = () => {
               <a
                 key={key}
                 href={item.href}
-                className="text-foreground/80 hover:text-primary transition-colors duration-200"
+                className="group relative text-foreground/80 font-medium transition-colors duration-300 hover:text-primary"
               >
                 {item.label}
+                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-purple-500 to-pink-500 transition-all duration-300 group-hover:w-full" />
               </a>
             ))}
           </div>
@@ -55,7 +59,7 @@ export const Navbar = () => {
           {/* Mobile Button */}
           <button
             onClick={() => setIsMenuOpen((prev) => !prev)}
-            className="md:hidden p-2 text-foreground z-50"
+            className="md:hidden p-2 text-foreground z-50 transition-colors duration-300 hover:text-primary"
             aria-label={isMenuOpen ? "Close menu" : "Open menu"}
           >
             {isMenuOpen ? <X size="24" /> : <Menu size="24" />}
@@ -63,10 +67,10 @@ export const Navbar = () => {
         </div>
       </nav>
 
-      {/* ✅ Mobile Overlay MENU (kept outside) */}
+      {/* Mobile Menu */}
       <div
         className={cn(
-          "fixed inset-0 bg-background/95 backdrop-blur-md z-40 flex flex-col items-center justify-center",
+          "fixed inset-0 bg-background/95 backdrop-blur-xl z-40 flex flex-col items-center justify-center",
           "transition-all duration-300 md:hidden",
           isMenuOpen
             ? "opacity-100 pointer-events-auto"
@@ -78,10 +82,11 @@ export const Navbar = () => {
             <a
               key={key}
               href={item.href}
-              className="text-foreground/80 hover:text-primary transition-colors duration-200"
+              className="text-foreground/80 font-medium hover:text-primary transition-all duration-300 relative group"
               onClick={() => setIsMenuOpen(false)}
             >
               {item.label}
+              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-purple-500 to-pink-500 transition-all duration-300 group-hover:w-full" />
             </a>
           ))}
         </div>

@@ -36,12 +36,13 @@ export const ThemeToggle = () => {
   return (
     <button
       onClick={toggleTheme}
-      className="hidden sm:block fixed top-4 right-4 z-[9999] p-3 rounded-full"
+      className="fixed top-4 right-4 z-[9999] p-3 rounded-full bg-primary/10 hover:bg-primary/20 text-primary transition-all duration-300 hover:scale-110 shadow-lg border border-primary/20"
+      aria-label="Toggle theme"
     >
       {isDarkMode ? (
-        <Sun className="h-6 w-6 text-yellow-300" />
+        <Sun className="h-5 w-5" />
       ) : (
-        <Moon className="h-6 w-6 text-blue-900" />
+        <Moon className="h-5 w-5" />
       )}
     </button>
   );
